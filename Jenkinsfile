@@ -17,6 +17,6 @@ node {
       }
    }
    stage('Deploy') {
-      sh "scp -r -i jenkins.pem target/  ubuntu@ec2-18-216-246-227.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/team-standings"
+      sh "scp -r -i jenkins.pem target/  bitmani@ec2-18-217-63-227.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/team-standings"
    }
 }
