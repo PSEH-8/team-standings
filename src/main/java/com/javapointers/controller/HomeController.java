@@ -1,12 +1,11 @@
 package com.javapointers.controller;
 
+import com.javapointers.Beans.Team;
 import com.javapointers.model.TeamStandings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.xml.ws.Response;
@@ -29,7 +28,8 @@ public class HomeController {
     }
 
     @RequestMapping(value="/showStandings", method = RequestMethod.GET)
-    public String showLoginPage(@ModelAttribute ModelMap model) {
+    @ResponseBody
+    public String showLoginPage(@RequestBody Team team) {
 
         TeamStandings teamStandings = new TeamStandings();
         teamStandings.getStandings();
